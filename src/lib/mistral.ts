@@ -1,7 +1,7 @@
 import { Mistral } from '@mistralai/mistralai'
 
 const mistral = new Mistral({
-  apiKey: process.env.MISTRAL_API_KEY!,
+  apiKey: process.env.MISTRAL_API_KEY || 'placeholder-api-key',
 })
 
 export interface DiagnosisResponse {
