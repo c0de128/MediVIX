@@ -13,11 +13,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="flex h-24 items-center px-4 sm:px-6 lg:px-8">
-        {/* Desktop Layout: Flexbox Layout with Proper Spacing */}
-        <div className="hidden md:flex w-full items-center justify-between">
+        {/* Desktop Layout: Three-Column Grid with Centered Logo */}
+        <div className="hidden md:grid w-full grid-cols-3 items-center">
 
-          {/* Logo: Left Side */}
-          <div className="flex-shrink-0">
+          {/* Left Column: Spacer */}
+          <div></div>
+
+          {/* Center Column: Logo */}
+          <div className="flex justify-center">
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/logos/MediVIX-logo.png"
@@ -30,8 +33,8 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Navigation: Right Side */}
-          <div className="flex items-center">
+          {/* Right Column: Navigation */}
+          <div className="flex justify-end">
             <MainNav />
           </div>
         </div>
