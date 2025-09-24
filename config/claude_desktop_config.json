@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "C:\\Users\\KevinMcKay\\AppData\\Roaming\\npm\\mcp-server-postgres.cmd",
+      "args": [],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "postgresql://user:password@host:port/database"
+      }
+    },
+    "brave-search": {
+      "command": "C:\\Users\\KevinMcKay\\AppData\\Roaming\\npm\\mcp-server-brave-search.cmd",
+      "args": [],
+      "env": {
+        "BRAVE_SEARCH_API_KEY": "YOUR_BRAVE_SEARCH_API_KEY"
+      }
+    },
+    "memory": {
+      "command": "C:\\Program Files\\nodejs\\npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "C:\\Program Files\\nodejs\\npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "time": {
+      "command": "C:\\Python313\\python.exe",
+      "args": [
+        "-m",
+        "mcp_server_time"
+      ]
+    },
+    "fetch": {
+      "command": "C:\\Python313\\python.exe",
+      "args": [
+        "-m",
+        "mcp_server_fetch"
+      ],
+      "env": {
+        "USER_AGENT": "MediVIX/1.0"
+      }
+    },
+    "sqlite": {
+      "command": "C:\\Python313\\python.exe",
+      "args": [
+        "-m",
+        "mcp_server_sqlite",
+        "--db-path",
+        "C:\\_dev\\mediVIX\\data\\local.db"
+      ]
+    }
+  }
+}
