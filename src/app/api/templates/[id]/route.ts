@@ -14,8 +14,9 @@ const UpdateTemplateSchema = z.object({
 // GET /api/templates/[id] - Get single template
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params
   try {
     const { data: template, error } = await supabase
       .from('visit_templates')
@@ -50,8 +51,9 @@ export async function GET(
 // PUT /api/templates/[id] - Update template
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params
   try {
     const body = await request.json()
 
@@ -99,8 +101,9 @@ export async function PUT(
 // DELETE /api/templates/[id] - Delete template
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const params = await context.params
   try {
     const { error } = await supabase
       .from('visit_templates')
