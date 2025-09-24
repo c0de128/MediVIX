@@ -48,7 +48,7 @@ export function MainNav() {
   const pathname = usePathname()
 
   return (
-    <nav className="flex items-center space-x-6 lg:space-x-8 xl:space-x-10 min-w-max h-20 py-5">
+    <nav className="flex items-center justify-center flex-wrap gap-4 lg:gap-6 xl:gap-8">
       {navItems.map((item) => {
         const Icon = item.icon
         const isActive = pathname === item.href
@@ -58,13 +58,13 @@ export function MainNav() {
             key={item.href}
             href={item.href}
             className={cn(
-              'flex items-center gap-2 text-base font-medium transition-colors hover:text-primary whitespace-nowrap h-20 px-4 py-5 rounded-md',
+              'flex items-center gap-2 text-sm lg:text-base font-medium transition-colors hover:text-primary whitespace-nowrap px-3 py-2 rounded-md',
               isActive
-                ? 'text-foreground'
-                : 'text-muted-foreground'
+                ? 'text-foreground bg-accent'
+                : 'text-muted-foreground hover:text-foreground'
             )}
           >
-            <Icon className="h-6 w-6" />
+            <Icon className="h-5 w-5" />
             {item.title}
           </Link>
         )
